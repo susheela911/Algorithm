@@ -3,23 +3,19 @@ using namespace std;
 int tile=1;
 int board[20][20];
 void tiling_board(int trow, int tcol, int drow, int dcol,int size)
-{
-    if(size==1)
+{   if(size==1)
         return;
     int qsize=size/2;
     int tileToUse=tile++;
     if(drow<=trow+qsize-1 && dcol<=tcol+qsize-1)
-    {
-        tiling_board(trow,tcol,drow,dcol,qsize);
+    {tiling_board(trow,tcol,drow,dcol,qsize);
     }
     else
-    {
-        board[trow+qsize-1][tcol+qsize-1]=tileToUse;
+    {  board[trow+qsize-1][tcol+qsize-1]=tileToUse;
         tiling_board(trow,tcol,trow+qsize-1,tcol+qsize-1,qsize);
     }
     if(drow<=trow+qsize-1 && dcol>=tcol+qsize)
-    {
-        tiling_board(trow,tcol+qsize,drow,dcol,qsize);
+    { tiling_board(trow,tcol+qsize,drow,dcol,qsize);
     }
      else
     {
@@ -45,7 +41,6 @@ void tiling_board(int trow, int tcol, int drow, int dcol,int size)
         tiling_board(trow+qsize,tcol+qsize,trow+qsize,tcol+qsize,qsize);
     }
 }
-
 int main()
 {
     int n,drow,dcol,i,j;
@@ -60,6 +55,6 @@ int main()
         {
             cout<<board[i][j]<<"\t";
         }
-        cout<<endl;
-    }
+        cout<<endl;}
+    return 0;
 }
