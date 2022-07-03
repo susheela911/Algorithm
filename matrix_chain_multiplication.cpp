@@ -75,6 +75,6 @@ cout<<"--- The Solution number matrix (S TABLE)--- "<<endl;
   }
 
 cout<<"The optimal solution is ";
-print_opti(1,n);
+print_optimal(1,n);
  return 0;
 }
